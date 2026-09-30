@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Cover from '@/components/Cover';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { fundBySlug, projects } from '@/lib/data';
@@ -24,7 +25,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <section className="banner banner-tall" style={{ backgroundImage: `url(${p.photos[0]})` }}>
+      <section className="banner banner-tall">
+        <Cover src={p.photos[0]} sizes="100vw" priority />
         <div className="wrap banner-copy">
           <Link href={`/funds/${fund.slug}`} className="back">{fund.name}</Link>
           <h1>{p.name}</h1>
@@ -45,7 +47,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       {p.photos.length > 1 && (
         <section className="wrap gallery">
           {p.photos.slice(1).map((src) => (
-            <img key={src} src={src} alt={`${p.name} photo`} loading="lazy" />
+            <div key={src} className="gallery-item"><Cover src={src} alt={`${p.name} photo`} sizes="(max-width: 479px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
           ))}
         </section>
       )}

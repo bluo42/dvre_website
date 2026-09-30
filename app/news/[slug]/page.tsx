@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Cover from '@/components/Cover';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { fundByTag, photos, site } from '@/lib/data';
@@ -28,7 +29,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           <h1>{post.title}</h1>
           <span className="meta">{formatDate(post.date)}</span>
         </div>
-        <div className="post-img" style={{ backgroundImage: `url(${image})` }} />
+        <div className="post-img"><Cover src={image} sizes="(max-width: 767px) 100vw, 50vw" priority /></div>
       </section>
 
       <section className="band-white">
@@ -42,7 +43,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               <>
                 <p className="label label-dark">Part of</p>
                 <Link href={`/funds/${fund.slug}`} className="fund-mini">
-                  <span className="fund-mini-img" style={{ backgroundImage: `url(${fund.photo})` }} />
+                  <span className="fund-mini-img"><Cover src={fund.photo} sizes="(max-width: 767px) 100vw, 33vw" /></span>
                   <span className="fund-mini-tx">
                     <b>{fund.name}</b>
                     <small>{fund.facts[0][1]} · {fund.facts[1]?.[1]}</small>
@@ -68,7 +69,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           <div className="more-grid">
             {others.slice(0, 3).map((p) => (
               <Link key={p.slug} href={`/news/${p.slug}`}>
-                <span className="more-img" style={{ backgroundImage: `url(${p.image ?? fundByTag(p.fund)?.photo ?? photos.pasadena})` }} />
+                <span className="more-img"><Cover src={p.image ?? fundByTag(p.fund)?.photo ?? photos.pasadena} sizes="(max-width: 767px) 100vw, 33vw" /></span>
                 <span className="meta">{formatDate(p.date)}</span>
                 <b>{p.title}</b>
               </Link>

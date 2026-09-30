@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Cover from '@/components/Cover';
 import { useMemo, useState } from 'react';
 
 export type FeedItem = {
@@ -35,7 +36,7 @@ export default function NewsFeed({ items }: { items: FeedItem[] }) {
   return (
     <>
       <Link href={`/news/${f.slug}`} className="news-feat">
-        <div className="news-feat-img" style={{ backgroundImage: `url(${f.image})` }} />
+        <div className="news-feat-img"><Cover src={f.image} sizes="(max-width: 767px) 100vw, 58vw" priority /></div>
         <div className="news-feat-tx">
           <p className="latest">Latest</p>
           <div className="tags"><span className="tag tag-solid">{f.category}</span><span className="tag">{f.fund}</span></div>
@@ -68,7 +69,7 @@ export default function NewsFeed({ items }: { items: FeedItem[] }) {
                   <b>{i.title}</b>
                   <span className="meta">{i.fund}</span>
                 </div>
-                <div className="news-th" style={{ backgroundImage: `url(${i.image})` }} />
+                <div className="news-th"><Cover src={i.image} sizes="160px" /></div>
               </Link>
             ))}
           </div>

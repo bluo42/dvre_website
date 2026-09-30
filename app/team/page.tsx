@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { team } from '@/lib/data';
 
 export const metadata: Metadata = { title: 'Team', description: 'The partners leading DVRE Partners.' };
@@ -16,7 +17,7 @@ export default function Team() {
         <div className="wrap team-grid">
           {team.map((m) => (
             <article key={m.name} className="member">
-              <img src={m.photo} alt={`Portrait of ${m.name}`} width={900} height={900} loading="lazy" />
+              <Image src={m.photo} alt={`Portrait of ${m.name}`} width={900} height={900} sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" />
               <h2>{m.name}</h2>
               <p className="role">{m.role}</p>
               <p className="bio">{m.bio}</p>

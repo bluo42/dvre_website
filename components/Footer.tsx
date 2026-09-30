@@ -25,7 +25,7 @@ export default function Footer() {
           <p className="footer-h">Connect</p>
           <Link href="/news">News</Link>
           <a href={site.investorPortal} target="_blank" rel="noreferrer">Investor Portal</a>
-          <a href={`mailto:${site.email}`}>{site.email}</a>
+          <a href={`mailto:${site.email}`} className="footer-email">{site.email}</a>
         </div>
       </div>
       <div className="wrap footer-base">© {new Date().getFullYear()} DVRE Partners. All rights reserved.</div>

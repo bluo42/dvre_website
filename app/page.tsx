@@ -1,14 +1,23 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
+import Cover from '@/components/Cover';
 import CountUp from '@/components/CountUp';
 import { byTheNumbers, funds, site, stats, whatWeDo } from '@/lib/data';
+
+// Only render the video once public/video/hero.mp4 has been added; until then the photo shows.
+const hasVideo = fs.existsSync(path.join(process.cwd(), 'public', 'video', 'hero.mp4'));
 
 export default function Home() {
   return (
     <>
       <section className="hero">
-        <video className="hero-media" autoPlay muted loop playsInline poster={site.hero.poster} aria-hidden="true">
-          <source src={site.hero.video} type="video/mp4" />
-        </video>
+        <Cover src={site.hero.poster} sizes="100vw" priority />
+        {hasVideo && (
+          <video className="hero-media" autoPlay muted loop playsInline poster={site.hero.poster} aria-hidden="true">
+            <source src={site.hero.video} type="video/mp4" />
+          </video>
+        )}
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">{site.hero.eyebrow}</p>
@@ -36,7 +45,8 @@ export default function Home() {
         </div>
         <div className="fund-row">
           {funds.map((f) => (
-            <Link key={f.slug} href={`/funds/${f.slug}`} className="photo-card fund-card" style={{ backgroundImage: `url(${f.photo})` }}>
+            <Link key={f.slug} href={`/funds/${f.slug}`} className="photo-card fund-card">
+              <Cover src={f.photo} sizes="(max-width: 1023px) 80vw, 25vw" />
               <span className="photo-card-tx"><b>{f.cardLabel}</b><i>{f.cardStatus}</i></span>
             </Link>
           ))}

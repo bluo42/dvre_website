@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Cover from '@/components/Cover';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { fundBySlug, funds, projectsForFund } from '@/lib/data';
@@ -37,7 +38,8 @@ export default function FundPage({ params }: { params: { slug: string } }) {
         {list.length ? (
           <div className="project-grid">
             {list.map((p) => (
-              <Link key={p.slug} href={`/projects/${p.slug}`} className="photo-card project-card" style={{ backgroundImage: `url(${p.photos[0]})` }}>
+              <Link key={p.slug} href={`/projects/${p.slug}`} className="photo-card project-card">
+                <Cover src={p.photos[0]} sizes="(max-width: 767px) 100vw, 50vw" />
                 <span className="photo-card-tx"><b>{p.name}</b><i>{p.status}</i></span>
               </Link>
             ))}

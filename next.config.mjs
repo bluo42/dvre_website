@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Photos are still hosted on Squarespace's CDN; Vercel resizes them for each screen.
+  images: {
+    remotePatterns: [{ protocol: 'https', hostname: 'images.squarespace-cdn.com' }],
+  },
   // Keep old Squarespace links working after you move the domain to Vercel.
   async redirects() {
     return [

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Cover from '@/components/Cover';
 import type { Metadata } from 'next';
 import { journey, photos, projects, site } from '@/lib/data';
 
@@ -13,7 +14,8 @@ const steps = [
 export default function About() {
   return (
     <>
-      <section className="banner" style={{ backgroundImage: `url(${photos.pasadena})` }}>
+      <section className="banner">
+        <Cover src={photos.pasadena} sizes="100vw" priority />
         <div className="wrap banner-copy">
           <p className="eyebrow">About us</p>
           <h1>Small-scale housing, done right.</h1>
@@ -27,7 +29,7 @@ export default function About() {
           <p className="lede">Founded in 2021, DVRE Partners acquires and repositions small multifamily properties, adding new homes to established neighborhoods through ADUs, SB 9 and by-right development.</p>
           <p className="lede">Since then we have acquired and operated $12M+ of real estate across Pasadena and Altadena, handling every step from feasibility to long-term management.</p>
         </div>
-        <div className="split-img" style={{ backgroundImage: `url(${photos.altadena})` }} />
+        <div className="split-img"><Cover src={photos.altadena} sizes="(max-width: 767px) 100vw, 50vw" /></div>
       </section>
 
       <section className="wrap block">

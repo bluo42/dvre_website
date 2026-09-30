@@ -4,8 +4,9 @@
 // ─────────────────────────────────────────────────────────────
 
 const CDN = 'https://images.squarespace-cdn.com/content/v1/62d32b1806c05f1e0770e163/';
-/** Build an image URL. Squarespace CDN images resize with ?format=750w / 1500w / 2500w. */
-export const img = (path: string, width = 1500) =>
+/** Build an image URL. Squarespace CDN images resize with ?format=750w / 1500w / 2500w.
+ *  We pull the largest size; next/image then serves each screen a right-sized copy. */
+export const img = (path: string, width = 2500) =>
   path.startsWith('/') ? path : `${CDN}${path}?format=${width}w`;
 
 export const site = {
@@ -20,7 +21,7 @@ export const site = {
     subtitle: 'Acquisition, entitlement, construction and management — under one roof.',
     // Drop an MP4 at /public/video/hero.mp4 (see README). The poster shows until it loads.
     video: '/video/hero.mp4',
-    poster: img('0613468c-30bf-4187-9cf4-ef4bf0e23898/RemoteMediaFile_6553624_0_2022_03_12_10_14_42.JPG', 2500),
+    poster: img('0613468c-30bf-4187-9cf4-ef4bf0e23898/RemoteMediaFile_6553624_0_2022_03_12_10_14_42.JPG'),
   },
   about:
     'DVRE Partners is a vertically integrated real estate investment and development firm focused on small multifamily and infill housing across Pasadena, Altadena and greater Los Angeles.',
