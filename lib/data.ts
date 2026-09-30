@@ -39,6 +39,7 @@ export const photos = {
   pasadena: img('a77fc369-7765-41c0-817f-703745cefe56/dji_fly_20241214_155056_998_1734220340252_photo_optimized.JPG'),
   altadena: img('5579d4c2-6c95-40c2-86e3-948bdba3578e/90461F3D-06E0-40D4-B9E6-89211F7CA142.jpg'),
   retail: img('01fceaa1-95e1-435d-8f23-45b7979b7275/dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
+  fundII: img('0613468c-30bf-4187-9cf4-ef4bf0e23898/RemoteMediaFile_6553624_0_2022_03_12_10_14_42.JPG'),
 };
 
 export type Fund = {
@@ -119,6 +120,31 @@ export const funds: Fund[] = [
     dateline: 'ALTADENA, CA',
     photo: photos.altadena,
     projectsHeading: 'In progress',
+  },
+  // ── DVRE Fund II (template) ──
+  // Placeholder page at /funds/fund-ii. When the fund launches: update the
+  // description, pills and facts, set cardStatus (e.g. '2 projects'), change
+  // projectsHeading if needed, and delete `comingSoon`. Add its projects below
+  // with fund: 'fund-ii', and tag news posts with `fund: Fund II`.
+  {
+    slug: 'fund-ii',
+    name: 'DVRE Fund II',
+    tag: 'Fund II',
+    cardLabel: 'DVRE Fund II',
+    cardStatus: 'Coming soon',
+    kicker: 'Portfolio · Fund II',
+    description:
+      "The successor to DVRE Fund I. Details on the fund's strategy and projects will be shared here as it takes shape.",
+    pills: ['Coming soon'],
+    facts: [
+      ['Strategy', 'To be announced'],
+      ['Projects', 'To be announced'],
+      ['Status', 'Coming soon'],
+    ],
+    dateline: 'LOS ANGELES, CA',
+    photo: photos.fundII,
+    projectsHeading: 'Projects',
+    comingSoon: true,
   },
   {
     slug: 'retail',
@@ -274,7 +300,7 @@ export const journey = [
   { year: 'Fund I', text: 'Four value-add projects completed and delivered' },
   { year: 'Pasadena Fund', text: 'Three projects adding new homes in Pasadena' },
   { year: 'Altadena Fund', text: 'Ground-up rebuilds after the Eaton Fire' },
-  { year: 'Next', text: 'DVRE Retail', upcoming: true },
+  { year: 'Next', text: 'DVRE Fund II and DVRE Retail', upcoming: true },
 ];
 
 export const fundBySlug = (slug: string) => funds.find((f) => f.slug === slug);
