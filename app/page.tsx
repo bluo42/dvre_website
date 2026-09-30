@@ -46,7 +46,7 @@ export default function Home() {
         <div className="fund-row">
           {funds.map((f) => (
             <Link key={f.slug} href={`/funds/${f.slug}`} className="photo-card fund-card">
-              <Cover src={f.photo} sizes="(max-width: 1023px) 80vw, 25vw" />
+              <Cover src={f.photo} sizes="(max-width: 1023px) 80vw, 20vw" />
               <span className="photo-card-tx"><b>{f.cardLabel}</b><i>{f.cardStatus}</i></span>
             </Link>
           ))}
