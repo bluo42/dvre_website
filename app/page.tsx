@@ -1,0 +1,70 @@
+import Link from 'next/link';
+import CountUp from '@/components/CountUp';
+import { byTheNumbers, funds, site, stats, whatWeDo } from '@/lib/data';
+
+export default function Home() {
+  return (
+    <>
+      <section className="hero">
+        <video className="hero-media" autoPlay muted loop playsInline poster={site.hero.poster} aria-hidden="true">
+          <source src={site.hero.video} type="video/mp4" />
+        </video>
+        <div className="hero-shade" />
+        <div className="hero-copy">
+          <p className="eyebrow">{site.hero.eyebrow}</p>
+          <h1>{site.hero.title}</h1>
+          <p className="hero-sub">{site.hero.subtitle}</p>
+          <Link href="/funds/fund-i" className="btn-outline">View portfolio</Link>
+        </div>
+      </section>
+
+      <section className="stats" aria-label="Firm highlights">
+        <div className="wrap stats-grid">
+          {stats.map((s) => (
+            <div key={s.label} className="stat">
+              <span className="stat-n"><CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} /></span>
+              <span className="stat-l">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="wrap home-funds">
+        <div className="row-head">
+          <h2>Our Funds</h2>
+          <span className="hint">Scroll</span>
+        </div>
+        <div className="fund-row">
+          {funds.map((f) => (
+            <Link key={f.slug} href={`/funds/${f.slug}`} className="photo-card fund-card" style={{ backgroundImage: `url(${f.photo})` }}>
+              <span className="photo-card-tx"><b>{f.cardLabel}</b><i>{f.cardStatus}</i></span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="who">
+          <div>
+            <p className="label">Who we are</p>
+            <h3 className="who-h">We turn underused lots into new homes.</h3>
+            <p className="who-p">DVRE Partners acquires, entitles, builds and operates small-scale multifamily and infill housing across Pasadena, Altadena and greater Los Angeles.</p>
+          </div>
+          <div>
+            <p className="label">What we do</p>
+            {whatWeDo.map((w) => (
+              <div key={w.title} className="rowline"><b>{w.title}</b><small>{w.text}</small></div>
+            ))}
+          </div>
+          <div>
+            <p className="label">By the numbers</p>
+            {byTheNumbers.map((b) => (
+              <div key={b.label} className="rowline">
+                <b className="num"><CountUp value={b.value} from={b.from} prefix={b.prefix} suffix={b.suffix} /></b>
+                <small>{b.label}</small>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
