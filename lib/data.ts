@@ -28,7 +28,7 @@ export const site = {
 };
 
 export const stats = [
-  { value: 12, prefix: '$', suffix: 'M+', label: 'Real estate acquired' },
+  { value: 20, prefix: '$', suffix: 'M+', label: 'Total capitalization' },
   { value: 11, label: 'Projects' },
   { value: 3, label: 'Funds' },
   { value: 5, suffix: '+', label: 'Years investing' },
@@ -221,19 +221,20 @@ export const projects: Project[] = [
   // ── Pasadena Fund ──
   {
     slug: 'madison-8', name: 'Madison 8', fund: 'pasadena-fund', status: 'Completed', address: '865 N Madison Ave',
-    summary: 'An existing Pasadena multifamily property expanded with four new homes and fully renovated units.',
+    units: '8',
+    summary: 'An existing four-unit Pasadena property expanded with four new homes and renovated units. Construction is complete and the homes are now leasing.',
     photos: [photos.pasadena],
   },
   {
     slug: 'oakland-7', name: 'Oakland 7', fund: 'pasadena-fund', status: 'In progress', address: '582 N Oakland Ave',
     units: '7', sqft: '±5,557',
-    summary: 'A three-unit Pasadena property on a 0.29-acre lot, adding three detached ADUs and one garage-conversion ADU while existing residents stay in place.',
+    summary: 'A three-unit Pasadena property on a 0.29-acre lot, adding three detached ADUs and one garage-conversion ADU while existing residents stay in place. Now under construction, with completion targeted for late 2026.',
     photos: [photos.pasadena],
   },
   {
     slug: 'madison-7', name: 'Madison 7', fund: 'pasadena-fund', status: 'In progress', address: '536 N Madison Ave',
     units: '7', sqft: '±5,648',
-    summary: 'A 1923 bungalow triplex near Old Town Pasadena, with four new three-bedroom homes planned at the rear of the lot.',
+    summary: 'A 1923 bungalow triplex near Old Town Pasadena, with four new three-bedroom homes planned at the rear of the lot. Currently in permitting.',
     photos: [photos.pasadena],
   },
   // ── Altadena Fund ──
@@ -290,17 +291,17 @@ export const whatWeDo = [
 ];
 
 export const byTheNumbers = [
-  { value: 12, prefix: '$', suffix: 'M+', label: 'Real estate acquired & operated' },
+  { value: 20, prefix: '$', suffix: 'M+', label: 'Total capitalization across our funds' },
   { value: 11, label: 'Projects across three funds' },
   { value: 20, suffix: '+', label: 'ADU & infill projects built by Deluxury Homes' },
   { value: 2021, from: 2000, label: 'Investing since' },
 ];
 
 export const journey = [
-  { year: '2021', text: 'DVRE Partners founded' },
-  { year: 'Fund I', text: 'Four value-add projects completed and delivered' },
-  { year: 'Pasadena Fund', text: 'Three projects adding new homes in Pasadena' },
-  { year: 'Altadena Fund', text: 'Ground-up rebuilds after the Eaton Fire' },
+  { year: '2021', text: 'Founded DVRE Partners and purchased our first property' },
+  { year: '2023', text: 'Completed our first development' },
+  { year: '2025', text: 'Delivered Fund I and started the Pasadena Fund' },
+  { year: '2026', text: 'Started the Altadena Fund and completed our first Pasadena Fund project' },
   { year: 'Next', text: 'DVRE Fund II and DVRE Retail', upcoming: true },
 ];
 

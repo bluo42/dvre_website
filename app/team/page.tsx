@@ -35,7 +35,7 @@ export default function Team() {
         <div>
           <p className="label">Track record</p>
           <div className="record">
-            <div><b>$12M+</b><small>Acquired</small></div>
+            <div><b>$20M+</b><small>Capitalization</small></div>
             <div><b>11</b><small>Projects</small></div>
             <div><b>3</b><small>Funds</small></div>
             <div><b>2021</b><small>Founded</small></div>

@@ -27,7 +27,7 @@ export default function About() {
           <p className="label">Our story</p>
           <h2>A Pasadena-rooted infill developer</h2>
           <p className="lede">Founded in 2021, DVRE Partners acquires and repositions small multifamily properties, adding new homes to established neighborhoods through ADUs, SB 9 and by-right development.</p>
-          <p className="lede">Since then we have acquired and operated $12M+ of real estate across Pasadena and Altadena, handling every step from feasibility to long-term management.</p>
+          <p className="lede">Since then we have grown to more than $20M in total capitalization across Pasadena, Altadena and greater Los Angeles, handling every step from feasibility to long-term management.</p>
         </div>
         <div className="split-img"><Cover src={photos.altadena} sizes="(max-width: 767px) 100vw, 50vw" /></div>
       </section>
