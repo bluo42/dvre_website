@@ -150,12 +150,13 @@ h3 { font-size: var(--fs-h3); }
 .fund-row { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: var(--gap); }  /* one column per fund, however many */
 .fund-card { aspect-ratio: 4 / 3; }
 
-.who { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: var(--gap-lg); border-top: 1px solid #222; margin-top: var(--sp-md); padding-top: var(--sp-md); }
+.who { display: grid; grid-template-columns: 1fr 2fr; gap: var(--gap-lg); border-top: 1px solid #222; margin-top: var(--sp-md); padding-top: var(--sp-md); }
 .who-h { font-size: clamp(1.5rem, 1.25rem + 1vw, 1.875rem); margin: 0 0 12px; }
 .who-p { color: var(--grey-1); margin: 0; max-width: 46ch; }
 .rowline { border-top: 1px solid #333; padding: 12px 0; }
 .rowline b { display: block; font-size: 15px; font-weight: 600; }
-.rowline b.num { font-family: var(--display); font-size: 26px; font-weight: 700; }
+.principles { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--gap-lg); }
+.principles .rowline small { font-size: 14px; line-height: 1.6; color: var(--grey-2); margin-top: 6px; }
 .rowline small { display: block; font-size: 12px; color: #888; margin-top: 2px; }
 
 /* ── Shared page parts ── */
@@ -285,8 +286,7 @@ h3 { font-size: var(--fs-h3); }
   .fund-row::-webkit-scrollbar { display: none; }
   .fund-card { flex: 0 0 min(340px, 72vw); scroll-snap-align: start; }
 
-  .who { grid-template-columns: 1fr 1fr; }
-  .who > :first-child { grid-column: 1 / -1; }
+  .who { grid-template-columns: 1fr; }
   .journey { grid-template-columns: repeat(3, 1fr); row-gap: 32px; }
   .journey::before { display: none; }
   .team-grid, .gallery { grid-template-columns: repeat(2, 1fr); }
@@ -313,7 +313,7 @@ h3 { font-size: var(--fs-h3); }
   .stat-l { font-size: var(--fs-small); }
 
   .fund-card { flex-basis: 80vw; }
-  .who { grid-template-columns: 1fr; }
+  .who, .principles { grid-template-columns: 1fr; }
 
   .split, .post-top, .news-feat { grid-template-columns: 1fr; }
   .split-img { order: -1; }

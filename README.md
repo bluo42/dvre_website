@@ -50,7 +50,7 @@ Every change you push to GitHub redeploys automatically.
    (the file name becomes the URL: `/news/oakland-7-construction-loan`).
 2. Fill in the header:
    - `category`: `Acquisition`, `Financing`, `Construction` or `Completion`
-   - `fund`: `Fund I`, `Fund II`, `Pasadena Fund`, `Altadena Fund` or `Retail`
+   - `fund`: `Fund I`, `Pasadena Fund`, `Altadena Fund` or `Retail`
    - `image` (optional): a full image URL, or put a photo in `public/news/` and use
      `/news/photo.jpg`. Without one, the fund's aerial is used.
 3. Write the body below the `---` line, with a blank line between paragraphs.
@@ -59,17 +59,10 @@ Every change you push to GitHub redeploys automatically.
 Keep announcements factual: no IRRs, return figures, raise amounts or invitations
 to invest.
 
-### DVRE Fund II
-
-Fund II has a placeholder page at `/funds/fund-ii`, shown as "Coming soon" on the
-homepage and in the Portfolio menu. To fill it in, edit its entry in the `funds`
-list in `lib/data.ts` (the comment above it lists what to change) and remove
-`comingSoon: true` once its first project is added.
-
 ### Adding a project
 
 Add an entry to the `projects` list in `lib/data.ts` with its fund slug
-(`fund-i`, `fund-ii`, `pasadena-fund`, `altadena-fund`, `retail`). It appears on the fund page
+(`fund-i`, `pasadena-fund`, `altadena-fund`, `retail`). It appears on the fund page
 and gets its own page at `/projects/<slug>`.
 
 ## Run locally (optional)

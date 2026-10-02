@@ -3,7 +3,7 @@ import path from 'node:path';
 import Link from 'next/link';
 import Cover from '@/components/Cover';
 import CountUp from '@/components/CountUp';
-import { byTheNumbers, funds, site, stats, whatWeDo } from '@/lib/data';
+import { funds, philosophy, site, stats, whoWeAre } from '@/lib/data';
 
 // Only render the video once public/video/hero.mp4 has been added; until then the photo shows.
 const hasVideo = fs.existsSync(path.join(process.cwd(), 'public', 'video', 'hero.mp4'));
@@ -55,23 +55,16 @@ export default function Home() {
         <div className="who">
           <div>
             <p className="label">Who we are</p>
-            <h3 className="who-h">We turn underused lots into new homes.</h3>
-            <p className="who-p">DVRE Partners acquires, entitles, builds and operates small-scale multifamily and infill housing across Pasadena, Altadena and greater Los Angeles.</p>
+            <h3 className="who-h">{whoWeAre.title}</h3>
+            <p className="who-p">{whoWeAre.text}</p>
           </div>
           <div>
-            <p className="label">What we do</p>
-            {whatWeDo.map((w) => (
-              <div key={w.title} className="rowline"><b>{w.title}</b><small>{w.text}</small></div>
-            ))}
-          </div>
-          <div>
-            <p className="label">By the numbers</p>
-            {byTheNumbers.map((b) => (
-              <div key={b.label} className="rowline">
-                <b className="num"><CountUp value={b.value} from={b.from} prefix={b.prefix} suffix={b.suffix} /></b>
-                <small>{b.label}</small>
-              </div>
-            ))}
+            <p className="label">Our philosophy</p>
+            <div className="principles">
+              {philosophy.map((p) => (
+                <div key={p.title} className="rowline"><b>{p.title}</b><small>{p.text}</small></div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

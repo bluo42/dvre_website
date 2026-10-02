@@ -40,7 +40,6 @@ export const photos = {
   pasadena: img('a77fc369-7765-41c0-817f-703745cefe56/dji_fly_20241214_155056_998_1734220340252_photo_optimized.JPG'),
   altadena: img('5579d4c2-6c95-40c2-86e3-948bdba3578e/90461F3D-06E0-40D4-B9E6-89211F7CA142.jpg'),
   retail: img('01fceaa1-95e1-435d-8f23-45b7979b7275/dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
-  fundII: img('0613468c-30bf-4187-9cf4-ef4bf0e23898/RemoteMediaFile_6553624_0_2022_03_12_10_14_42.JPG'),
 };
 
 export type Fund = {
@@ -121,31 +120,6 @@ export const funds: Fund[] = [
     dateline: 'ALTADENA, CA',
     photo: photos.altadena,
     projectsHeading: 'In progress',
-  },
-  // ── DVRE Fund II (template) ──
-  // Placeholder page at /funds/fund-ii. When the fund launches: update the
-  // description, pills and facts, set cardStatus (e.g. '2 projects'), change
-  // projectsHeading if needed, and delete `comingSoon`. Add its projects below
-  // with fund: 'fund-ii', and tag news posts with `fund: Fund II`.
-  {
-    slug: 'fund-ii',
-    name: 'DVRE Fund II',
-    tag: 'Fund II',
-    cardLabel: 'DVRE Fund II',
-    cardStatus: 'Coming soon',
-    kicker: 'Portfolio · Fund II',
-    description:
-      "The successor to DVRE Fund I. Details on the fund's strategy and projects will be shared here as it takes shape.",
-    pills: ['Coming soon'],
-    facts: [
-      ['Strategy', 'To be announced'],
-      ['Projects', 'To be announced'],
-      ['Status', 'Coming soon'],
-    ],
-    dateline: 'LOS ANGELES, CA',
-    photo: photos.fundII,
-    projectsHeading: 'Projects',
-    comingSoon: true,
   },
   {
     slug: 'retail',
@@ -283,18 +257,18 @@ export const team = [
   },
 ];
 
-export const whatWeDo = [
-  { title: 'Acquisition & feasibility', text: 'Sourcing and underwriting infill opportunities' },
-  { title: 'Entitlement & design', text: 'SB 9, ADU and by-right pathways' },
-  { title: 'Construction', text: 'In-house build through Deluxury Homes' },
-  { title: 'Property management', text: 'Lease-up and long-term operations' },
-];
+// Homepage "Who we are" and "Our philosophy". Written to cover both the
+// residential funds and DVRE Retail.
+export const whoWeAre = {
+  title: 'We find value others overlook.',
+  text: 'DVRE Partners is a full-cycle real estate investment and development company. Since 2021 we have grown to more than $20M of real estate across 50+ units in the West San Gabriel Valley, with over 30 ground-up homes developed or in our pipeline.',
+};
 
-export const byTheNumbers = [
-  { value: 20, prefix: '$', suffix: 'M+', label: 'Total capitalization across our funds' },
-  { value: 11, label: 'Projects across three funds' },
-  { value: 20, suffix: '+', label: 'ADU & infill projects built by Deluxury Homes' },
-  { value: 2021, from: 2000, label: 'Investing since' },
+export const philosophy = [
+  { title: 'Look where others don’t', text: 'We seek out mispriced properties whose value is hidden by structural inefficiencies: zoning, entitlements, physical condition or an overlooked market.' },
+  { title: 'Concentrate capital', text: 'We commit focused capital to a select number of high-conviction opportunities rather than spreading it thin.' },
+  { title: 'Do the deep work', text: 'Hands-on value-add, from entitlement and construction to leasing and operations, unlocks that value for our investors.' },
+  { title: 'Stay ahead of the market', text: 'As a strategy becomes widely understood, its margins narrow. We keep moving to the next inefficiency, from multifamily infill to neighborhood retail across the San Gabriel Valley.' },
 ];
 
 export const journey = [
@@ -302,7 +276,7 @@ export const journey = [
   { year: '2023', text: 'Completed our first development' },
   { year: '2025', text: 'Delivered Fund I and started the Pasadena Fund' },
   { year: '2026', text: 'Started the Altadena Fund and completed our first Pasadena Fund project' },
-  { year: 'Next', text: 'DVRE Fund II and DVRE Retail', upcoming: true },
+  { year: 'Next', text: 'Expanding into neighborhood retail with DVRE Retail', upcoming: true },
 ];
 
 export const fundBySlug = (slug: string) => funds.find((f) => f.slug === slug);
