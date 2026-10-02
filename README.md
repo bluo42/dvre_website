@@ -38,13 +38,16 @@ Every change you push to GitHub redeploys automatically.
 
 | To change… | Edit |
 | --- | --- |
-| Hero text, email, stats, funds, projects, team bios, About timeline | `lib/data.ts` |
+| Hero text, email, stats, funds, projects, team bios, About page (who we are, philosophy, timeline) | `lib/data.ts` |
 | News posts | `content/news/*.md` (see below) |
 | Colors, spacing, layout | `app/globals.css` |
 | Fonts | two lines at the top of `app/layout.tsx` |
 | Page structure | `app/*/page.tsx` |
 
 ### Adding a News post
+
+The News section is hidden for now. To bring back `/news` and the News links, set
+`showNews = true` near the top of `lib/data.ts`. Posts can still be added while it's hidden.
 
 1. Copy `content/news/_TEMPLATE.md` and rename it, e.g. `oakland-7-construction-loan.md`
    (the file name becomes the URL: `/news/oakland-7-construction-loan`).

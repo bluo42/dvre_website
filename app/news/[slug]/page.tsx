@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Cover from '@/components/Cover';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { fundByTag, photos, site } from '@/lib/data';
+import { fundByTag, photos, showNews, site } from '@/lib/data';
 import { formatDate, getPost, getPosts } from '@/lib/news';
 
-export const generateStaticParams = () => getPosts().map((p) => ({ slug: p.slug }));
+export const generateStaticParams = () => (showNews ? getPosts().map((p) => ({ slug: p.slug })) : []);
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const p = getPost(params.slug);
@@ -13,7 +13,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 }
 
 export default function PostPage({ params }: { params: { slug: string } }) {
-  const post = getPost(params.slug);
+  const post = showNews ? getPost(params.slug) : undefined;
   if (!post) notFound();
   const fund = fundByTag(post.fund);
   const image = post.image ?? fund?.photo ?? photos.pasadena;

@@ -8,9 +8,9 @@ export default function Team() {
   return (
     <>
       <section className="wrap page-intro">
-        <p className="eyebrow">Our team</p>
-        <h1>The team behind DVRE.</h1>
-        <p className="lede">Architects, operators and investors building small-scale housing across Los Angeles since 2021.</p>
+        <p className="eyebrow">Team</p>
+        <h1>Leadership</h1>
+        <p className="lede">DVRE Partners is led by three partners with backgrounds in real estate development, investment management and asset management.</p>
       </section>
 
       <section className="band-white">
@@ -28,9 +28,9 @@ export default function Team() {
 
       <section className="wrap split split-top">
         <div>
-          <p className="label">What we do</p>
-          <h2>One team, start to finish</h2>
-          <p className="lede">Feasibility and entitlements, in-house construction through Deluxury Homes, and long-term property management.</p>
+          <p className="label">Platform</p>
+          <h2>Vertically integrated</h2>
+          <p className="lede">DVRE manages each investment from acquisition through development, leasing and asset management, with construction performed by its affiliate, Deluxury Homes.</p>
         </div>
         <div>
           <p className="label">Track record</p>

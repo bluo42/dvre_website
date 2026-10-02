@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import NewsFeed, { type FeedItem } from '@/components/NewsFeed';
-import { fundByTag, photos } from '@/lib/data';
+import { fundByTag, photos, showNews } from '@/lib/data';
 import { formatDate, getPosts } from '@/lib/news';
 
 export const metadata: Metadata = { title: 'News', description: "Acquisitions, financings and milestones across DVRE's funds." };
 
 export default function News() {
+  if (!showNews) notFound();
   const items: FeedItem[] = getPosts().map((p) => {
     const d = new Date(p.date + 'T12:00:00');
     return {

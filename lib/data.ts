@@ -13,19 +13,22 @@ export const site = {
   name: 'DVRE Partners',
   email: 'development@dvrepartners.com',
   investorPortal: 'https://dvrepartners.cashflowportal.com/app',
-  tagline: 'Infill housing investment & development',
+  tagline: 'Value-add real estate investment & development',
   location: 'Los Angeles, California',
   hero: {
-    eyebrow: 'DVRE Partners · Los Angeles',
-    title: 'Infill housing, built end to end.',
-    subtitle: 'Acquisition, entitlement, construction and management — under one roof.',
+    title: 'Unlocking value in real estate.',
+    subtitle: 'A vertically integrated value-add real estate investment firm.',
     // Drop an MP4 at /public/video/hero.mp4 (see README). The poster shows until it loads.
     video: '/video/hero.mp4',
     poster: img('0613468c-30bf-4187-9cf4-ef4bf0e23898/RemoteMediaFile_6553624_0_2022_03_12_10_14_42.JPG'),
   },
   about:
-    'DVRE Partners is a vertically integrated real estate investment and development firm focused on small multifamily and infill housing across Pasadena, Altadena and greater Los Angeles.',
+    'DVRE Partners is a full-cycle real estate investment and development firm pursuing value-add opportunities across residential and retail real estate in the San Gabriel Valley.',
 };
+
+// The News section is built but hidden for now. Set to true to put /news and
+// the News links back on the site.
+export const showNews = false;
 
 export const stats = [
   { value: 20, prefix: '$', suffix: 'M+', label: 'Total capitalization' },
@@ -239,37 +242,35 @@ export const projects: Project[] = [
 export const team = [
   {
     name: 'Brian Chan',
-    role: 'Development · Partner',
+    role: 'Partner · Development',
     photo: '/team/brian-chan.jpg',
-    bio: "Brian leads DVRE's development platform and oversees Deluxury Homes, the firm's affiliated construction company, directing design, entitlement and construction execution across the portfolio. Prior to DVRE, he managed more than $100 million of multifamily development at West Builders. Brian holds a Bachelor of Architecture from California Polytechnic State University, San Luis Obispo.",
+    bio: "Brian Chan is a Partner at DVRE Partners, responsible for development, design and construction across the firm's portfolio. Brian also oversees Deluxury Homes, the firm's affiliated construction company. Previously, Brian managed more than $100 million of multifamily development at West Builders. Brian holds a Bachelor of Architecture from California Polytechnic State University, San Luis Obispo.",
   },
   {
     name: 'Brandon Luo',
-    role: 'Investments · Partner',
+    role: 'Partner · Investments',
     photo: '/team/brandon-luo.jpg',
-    bio: "Brandon leads DVRE's financial strategy and operations, overseeing capital allocation, capital markets and internal enterprise system development. Prior to DVRE, he served as a quantitative analyst at Bank of America and as a portfolio management associate at PIMCO. Brandon is a CFA charterholder and holds a B.S. from the University of California, Berkeley and an M.S. from the Georgia Institute of Technology.",
+    bio: "Brandon Luo is a Partner at DVRE Partners, responsible for investments, capital markets and firm operations. Previously, Brandon was a quantitative analyst at Bank of America and a portfolio management associate at PIMCO. Brandon is a CFA charterholder and holds a B.S. from the University of California, Berkeley and an M.S. from the Georgia Institute of Technology.",
   },
   {
     name: 'Justin Wang',
-    role: 'Asset Management · Partner',
+    role: 'Partner · Asset Management',
     photo: '/team/justin-wang.jpg',
-    bio: "Justin leads asset management and investor relations at DVRE, overseeing portfolio operations, financial reporting and communications with the firm's investors. Prior to DVRE, he worked on single-family rental acquisitions at Tricon Residential and in asset management at First Washington Realty. Justin holds a B.S. in Business from Boston University.",
+    bio: "Justin Wang is a Partner at DVRE Partners, responsible for asset management and investor relations. Previously, Justin worked on single-family rental acquisitions at Tricon Residential and in asset management at First Washington Realty. Justin holds a B.S. in Business from Boston University.",
   },
 ];
 
-// Homepage "Who we are" and "Our philosophy". Written to cover both the
+// About page "Who we are" and "Our philosophy". Written to cover both the
 // residential funds and DVRE Retail.
 export const whoWeAre = {
   title: 'We find value others overlook.',
-  text: 'DVRE Partners is a full-cycle real estate investment and development company. Since 2021 we have grown to more than $20M of real estate across 50+ units in the West San Gabriel Valley, with over 30 ground-up homes developed or in our pipeline.',
+  text: [
+    'DVRE Partners is a full-cycle real estate investment and development company. Since 2021 we have grown to more than $20M of real estate across 50+ units in the West San Gabriel Valley, with over 30 ground-up homes developed or in our pipeline.',
+    'Having built our track record in residential value-add, we are now applying the same approach to neighborhood retail across the San Gabriel Valley.',
+  ],
 };
 
-export const philosophy = [
-  { title: 'Look where others don’t', text: 'We seek out mispriced properties whose value is hidden by structural inefficiencies: zoning, entitlements, physical condition or an overlooked market.' },
-  { title: 'Concentrate capital', text: 'We commit focused capital to a select number of high-conviction opportunities rather than spreading it thin.' },
-  { title: 'Do the deep work', text: 'Hands-on value-add, from entitlement and construction to leasing and operations, unlocks that value for our investors.' },
-  { title: 'Stay ahead of the market', text: 'As a strategy becomes widely understood, its margins narrow. We keep moving to the next inefficiency, from multifamily infill to neighborhood retail across the San Gabriel Valley.' },
-];
+export const philosophy = ['Look where others don’t', 'Concentrate capital', 'Do the deep work', 'Stay ahead of the market'];
 
 export const journey = [
   { year: '2021', text: 'Founded DVRE Partners and purchased our first property' },

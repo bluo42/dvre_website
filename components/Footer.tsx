@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { funds, site } from '@/lib/data';
+import { funds, showNews, site } from '@/lib/data';
 
 export default function Footer() {
   return (
@@ -13,8 +13,9 @@ export default function Footer() {
           <p className="footer-tag">{site.tagline}<br />{site.location}</p>
         </div>
         <div>
-          <p className="footer-h">Company</p>
+          <p className="footer-h">Explore</p>
           <Link href="/about">About us</Link>
+          <Link href="/portfolio">Portfolio</Link>
           <Link href="/team">Team</Link>
         </div>
         <div>
@@ -23,7 +24,7 @@ export default function Footer() {
         </div>
         <div>
           <p className="footer-h">Connect</p>
-          <Link href="/news">News</Link>
+          {showNews && <Link href="/news">News</Link>}
           <a href={site.investorPortal} target="_blank" rel="noreferrer">Investor Portal</a>
           <a href={`mailto:${site.email}`} className="footer-email">{site.email}</a>
         </div>

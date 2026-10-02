@@ -3,7 +3,7 @@ import path from 'node:path';
 import Link from 'next/link';
 import Cover from '@/components/Cover';
 import CountUp from '@/components/CountUp';
-import { funds, philosophy, site, stats, whoWeAre } from '@/lib/data';
+import { funds, site, stats } from '@/lib/data';
 
 // Only render the video once public/video/hero.mp4 has been added; until then the photo shows.
 const hasVideo = fs.existsSync(path.join(process.cwd(), 'public', 'video', 'hero.mp4'));
@@ -20,10 +20,9 @@ export default function Home() {
         )}
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p className="eyebrow">{site.hero.eyebrow}</p>
           <h1>{site.hero.title}</h1>
           <p className="hero-sub">{site.hero.subtitle}</p>
-          <Link href="/funds/fund-i" className="btn-outline">View portfolio</Link>
+          <Link href="/portfolio" className="btn-outline">View portfolio</Link>
         </div>
       </section>
 
@@ -52,21 +51,6 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="who">
-          <div>
-            <p className="label">Who we are</p>
-            <h3 className="who-h">{whoWeAre.title}</h3>
-            <p className="who-p">{whoWeAre.text}</p>
-          </div>
-          <div>
-            <p className="label">Our philosophy</p>
-            <div className="principles">
-              {philosophy.map((p) => (
-                <div key={p.title} className="rowline"><b>{p.title}</b><small>{p.text}</small></div>
-              ))}
-            </div>
-          </div>
-        </div>
       </section>
     </>
   );

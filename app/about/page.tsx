@@ -1,15 +1,8 @@
-import Link from 'next/link';
 import Cover from '@/components/Cover';
 import type { Metadata } from 'next';
-import { journey, photos, projects, site } from '@/lib/data';
+import { journey, philosophy, photos, site, whoWeAre } from '@/lib/data';
 
 export const metadata: Metadata = { title: 'About us', description: site.about };
-
-const steps = [
-  { title: 'Feasibility & entitlements', text: 'Sourcing, underwriting and the approvals path for every site.' },
-  { title: 'Design & construction', text: 'Built in-house through our affiliate, Deluxury Homes.' },
-  { title: 'Property management', text: 'Lease-up and long-term operations after delivery.' },
-];
 
 export default function About() {
   return (
@@ -18,18 +11,26 @@ export default function About() {
         <Cover src={photos.pasadena} sizes="100vw" priority />
         <div className="wrap banner-copy">
           <p className="eyebrow">About us</p>
-          <h1>Small-scale housing, done right.</h1>
+          <h1>Full-cycle real estate investment.</h1>
         </div>
       </section>
 
       <section className="wrap split">
         <div>
-          <p className="label">Our story</p>
-          <h2>A Pasadena-rooted infill developer</h2>
-          <p className="lede">Founded in 2021, DVRE Partners acquires and repositions small multifamily properties, adding new homes to established neighborhoods through ADUs, SB 9 and by-right development.</p>
-          <p className="lede">Since then we have grown to more than $20M in total capitalization across Pasadena, Altadena and greater Los Angeles, handling every step from feasibility to long-term management.</p>
+          <p className="label">Who we are</p>
+          <h2>{whoWeAre.title}</h2>
+          {whoWeAre.text.map((t) => <p key={t} className="lede">{t}</p>)}
         </div>
         <div className="split-img"><Cover src={photos.altadena} sizes="(max-width: 767px) 100vw, 50vw" /></div>
+      </section>
+
+      <section className="wrap block">
+        <p className="label">Our philosophy</p>
+        <ol className="step-cards step-cards-4">
+          {philosophy.map((p, i) => (
+            <li key={p}><span className="step-n">0{i + 1}</span><b>{p}</b></li>
+          ))}
+        </ol>
       </section>
 
       <section className="wrap block">
@@ -41,25 +42,6 @@ export default function About() {
             </li>
           ))}
         </ol>
-      </section>
-
-      <section className="wrap block">
-        <p className="label">How we work</p>
-        <ol className="step-cards">
-          {steps.map((s, i) => (
-            <li key={s.title}><span className="step-n">0{i + 1}</span><b>{s.title}</b><span>{s.text}</span></li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="band-white">
-        <div className="wrap band-row">
-          <div>
-            <p className="label">Our portfolio</p>
-            <h2>{projects.length} projects across three funds</h2>
-          </div>
-          <Link href="/funds/fund-i" className="btn-outline btn-dark">View portfolio</Link>
-        </div>
       </section>
     </>
   );

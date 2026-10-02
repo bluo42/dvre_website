@@ -11,7 +11,7 @@ const display = Inter_Tight({ subsets: ['latin'], weight: ['500', '600', '700'],
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dvrepartners.com'),
-  title: { default: 'DVRE Partners — Infill housing, built end to end', template: '%s — DVRE Partners' },
+  title: { default: 'DVRE Partners — Value-add real estate investment', template: '%s — DVRE Partners' },
   description: site.about,
   openGraph: { title: 'DVRE Partners', description: site.about, images: [site.hero.poster] },
 };
