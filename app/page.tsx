@@ -2,8 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Link from 'next/link';
 import Cover from '@/components/Cover';
+import StatusBadge from '@/components/StatusBadge';
 import CountUp from '@/components/CountUp';
-import { funds, site, stats } from '@/lib/data';
+import { funds, fundStatus, site, stats } from '@/lib/data';
 
 // Only render the video once public/video/hero.mp4 has been added; until then the photo shows.
 const hasVideo = fs.existsSync(path.join(process.cwd(), 'public', 'video', 'hero.mp4'));
@@ -46,6 +47,7 @@ export default function Home() {
           {funds.map((f) => (
             <Link key={f.slug} href={`/funds/${f.slug}`} className="photo-card fund-card">
               <Cover src={f.photo} sizes="(max-width: 1023px) 80vw, 20vw" />
+              <StatusBadge status={fundStatus(f)} />
               <span className="photo-card-tx"><b>{f.cardLabel}</b><i>{f.cardStatus}</i></span>
             </Link>
           ))}

@@ -16,7 +16,7 @@ export const site = {
   tagline: 'Value-add real estate investment & development',
   location: 'Los Angeles, California',
   hero: {
-    title: 'Unlocking deep value in real estate.',
+    title: 'Uncovering deep value in real estate',
     subtitle: 'Value-add and opportunistic real estate investment across the San Gabriel Valley.',
     // Drop an MP4 at /public/video/hero.mp4 (see README). The poster shows until it loads.
     video: '/video/hero.mp4',
@@ -67,7 +67,7 @@ export const funds: Fund[] = [
     name: 'DVRE Fund I',
     tag: 'Fund I',
     cardLabel: 'DVRE Fund I',
-    cardStatus: '4 projects · Completed',
+    cardStatus: '4 projects',
     kicker: 'Portfolio · Fund I',
     description:
       "DVRE's first fund acquired existing residential properties across greater Los Angeles and added new homes through ADU and infill development. All four projects have been completed and delivered.",
@@ -129,7 +129,7 @@ export const funds: Fund[] = [
     name: 'DVRE Retail',
     tag: 'Retail',
     cardLabel: 'DVRE Retail',
-    cardStatus: 'Coming soon',
+    cardStatus: 'Neighborhood retail',
     kicker: 'Portfolio · Retail',
     description: 'A new DVRE strategy focused on neighborhood retail. Details will be shared here as the fund takes shape.',
     pills: ['Coming soon'],
@@ -281,5 +281,13 @@ export const journey = [
 ];
 
 export const fundBySlug = (slug: string) => funds.find((f) => f.slug === slug);
+
+/** Completed: all of a fund's projects are done. Coming soon: no projects yet. */
+export const fundStatus = (f: Fund) =>
+  f.comingSoon ? 'Coming soon' : projectsForFund(f.slug).every((p) => p.status === 'Completed') ? 'Completed' : 'In progress';
+
+/** A project gets its own page once it is completed and has photos of its own
+ *  (more than the single fund aerial). Until then its card shows the photo only. */
+export const hasProjectPage = (p: Project) => p.status === 'Completed' && p.photos.length > 1;
 export const fundByTag = (tag: string) => funds.find((f) => f.tag === tag);
 export const projectsForFund = (slug: string) => projects.filter((p) => p.fund === slug);

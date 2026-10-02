@@ -2,9 +2,10 @@ import Link from 'next/link';
 import Cover from '@/components/Cover';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { fundBySlug, projects } from '@/lib/data';
+import { fundBySlug, hasProjectPage, projects } from '@/lib/data';
 
-export const generateStaticParams = () => projects.map((p) => ({ slug: p.slug }));
+export const generateStaticParams = () => projects.filter(hasProjectPage).map((p) => ({ slug: p.slug }));
+export const dynamicParams = false;
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const p = projects.find((x) => x.slug === params.slug);
@@ -13,7 +14,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const p = projects.find((x) => x.slug === params.slug);
-  if (!p) notFound();
+  if (!p || !hasProjectPage(p)) notFound();
   const fund = fundBySlug(p.fund)!;
   const facts: [string, string][] = [
     ['Fund', fund.name],

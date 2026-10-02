@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Cover from '@/components/Cover';
-import { funds } from '@/lib/data';
+import StatusBadge from '@/components/StatusBadge';
+import { funds, fundStatus } from '@/lib/data';
 
 export const metadata: Metadata = { title: 'Portfolio', description: "DVRE Partners' funds and projects." };
 
@@ -16,6 +17,7 @@ export default function Portfolio() {
         {funds.map((f) => (
           <Link key={f.slug} href={`/funds/${f.slug}`} className="photo-card portfolio-card">
             <Cover src={f.photo} sizes="(max-width: 767px) 100vw, 50vw" />
+            <StatusBadge status={fundStatus(f)} />
             <span className="photo-card-tx"><b>{f.name}</b><i>{f.cardStatus}</i></span>
           </Link>
         ))}
