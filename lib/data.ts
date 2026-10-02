@@ -16,8 +16,8 @@ export const site = {
   tagline: 'Value-add real estate investment & development',
   location: 'Los Angeles, California',
   hero: {
-    title: 'Unlocking value in real estate.',
-    subtitle: 'A vertically integrated value-add real estate investment firm.',
+    title: 'Unlocking deep value in real estate.',
+    subtitle: 'Value-add and opportunistic real estate investment across the San Gabriel Valley.',
     // Drop an MP4 at /public/video/hero.mp4 (see README). The poster shows until it loads.
     video: '/video/hero.mp4',
     poster: img('0613468c-30bf-4187-9cf4-ef4bf0e23898/RemoteMediaFile_6553624_0_2022_03_12_10_14_42.JPG'),
