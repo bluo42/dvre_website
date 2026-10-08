@@ -21,7 +21,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     ['Status', p.status],
     ...(p.address ? [['Address', p.address] as [string, string]] : []),
     ...(p.units ? [['Units', p.units] as [string, string]] : []),
-    ...(p.sqft ? [['Square feet', p.sqft] as [string, string]] : []),
   ];
 
   return (
