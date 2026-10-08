@@ -151,6 +151,7 @@ export type Project = {
   sqft?: string;
   summary: string;
   photos: string[];
+  renderings?: boolean; // photos are renderings of the planned homes
 };
 
 export const projects: Project[] = [
@@ -217,30 +218,46 @@ export const projects: Project[] = [
     slug: 'madison-7', name: 'Madison 7', fund: 'pasadena-fund', status: 'In progress', address: '536 N Madison Ave',
     units: '7', sqft: '±5,648',
     summary: 'A 1923 bungalow triplex near Old Town Pasadena, with four new three-bedroom homes planned at the rear of the lot. Currently in permitting.',
-    photos: [photos.pasadena],
+    photos: [img('/images/536-madison-aerial.jpg')],
   },
   // ── Altadena Fund ──
   {
     slug: 'glenrose', name: 'Glenrose', fund: 'altadena-fund', status: 'In progress',
     summary: 'Ground-up build-to-rent housing on a fire-affected Altadena lot.',
-    photos: [photos.altadena],
+    renderings: true,
+    photos: [
+      img('/images/glenrose-rendering-aerial.jpg'),
+      img('/images/glenrose-rendering-front.jpg'),
+      img('/images/glenrose-rendering-driveway.jpg'),
+      img('/images/glenrose-rendering-rear.jpg'),
+    ],
   },
   {
     slug: 'marathon', name: 'Marathon', fund: 'altadena-fund', status: 'In progress',
     units: '8 (2 × 4)', sqft: '±8,000',
     summary: 'Two adjacent Altadena lots being rebuilt as eight build-to-rent homes under SB 9. Currently in plan check.',
-    photos: [photos.altadena],
+    renderings: true,
+    photos: [
+      img('/images/marathon-rendering-street.jpg'),
+      img('/images/marathon-rendering-aerial.jpg'),
+    ],
   },
   {
     slug: 'sinaloa', name: 'Sinaloa', fund: 'altadena-fund', status: 'In progress',
     units: '4', sqft: '±4,000',
     summary: 'Four new build-to-rent homes on a fire-affected Altadena lot.',
-    photos: [photos.altadena],
+    renderings: true,
+    photos: [
+      img('/images/sinaloa-rendering-street.jpg'),
+      img('/images/sinaloa-rendering-aerial.jpg'),
+      img('/images/sinaloa-rendering-front.jpg'),
+      img('/images/sinaloa-rendering-patio.jpg'),
+    ],
   },
   {
     slug: 'fair-oaks', name: 'Fair Oaks', fund: 'altadena-fund', status: 'In progress',
     summary: 'Ground-up build-to-rent housing on a fire-affected Altadena lot.',
-    photos: [photos.altadena],
+    photos: [img('/images/fair-oaks-aerial.jpg')],
   },
 ];
 
@@ -291,8 +308,8 @@ export const fundBySlug = (slug: string) => funds.find((f) => f.slug === slug);
 export const fundStatus = (f: Fund) =>
   f.comingSoon ? 'Coming soon' : projectsForFund(f.slug).every((p) => p.status === 'Completed') ? 'Completed' : 'In progress';
 
-/** A project gets its own page once it is completed and has photos of its own
- *  (more than the single fund aerial). Until then its card shows the photo only. */
-export const hasProjectPage = (p: Project) => p.status === 'Completed' && p.photos.length > 1;
+/** A project gets its own page once it has a set of finished photos or renderings
+ *  (more than one image). With a single photo, its card shows that photo only. */
+export const hasProjectPage = (p: Project) => p.photos.length > 1;
 export const fundByTag = (tag: string) => funds.find((f) => f.tag === tag);
 export const projectsForFund = (slug: string) => projects.filter((p) => p.fund === slug);

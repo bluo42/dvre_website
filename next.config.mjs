@@ -21,9 +21,9 @@ const nextConfig = {
       { source: '/madison-8', destination: '/projects/madison-8', permanent: true },
       { source: '/madison-7', destination: '/funds/pasadena-fund', permanent: true },
       { source: '/oakland-7', destination: '/funds/pasadena-fund', permanent: true },
-      { source: '/marathon', destination: '/funds/altadena-fund', permanent: true },
-      { source: '/sinaloa', destination: '/funds/altadena-fund', permanent: true },
-      { source: '/glenrose', destination: '/funds/altadena-fund', permanent: true },
+      { source: '/marathon', destination: '/projects/marathon', permanent: true },
+      { source: '/sinaloa', destination: '/projects/sinaloa', permanent: true },
+      { source: '/glenrose', destination: '/projects/glenrose', permanent: true },
       { source: '/fair-oaks', destination: '/funds/altadena-fund', permanent: true },
     ];
   },

@@ -31,7 +31,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="wrap banner-copy">
           <Link href={`/funds/${fund.slug}`} className="back">{fund.name}</Link>
           <h1>{p.name}</h1>
-          <p className="eyebrow">{p.status}</p>
+          <p className="eyebrow">{p.status}{p.renderings ? ' · Renderings' : ''}</p>
         </div>
       </section>
 
@@ -45,10 +45,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </dl>
       </section>
 
+      {p.renderings && <p className="wrap render-note">Images are renderings of the planned homes.</p>}
       {p.photos.length > 1 && (
         <section className="wrap gallery">
           {p.photos.slice(1).map((src) => (
-            <div key={src} className="gallery-item"><Cover src={src} alt={`${p.name} photo`} sizes="(max-width: 479px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
+            <div key={src} className="gallery-item"><Cover src={src} alt={`${p.name} ${p.renderings ? 'rendering' : 'photo'}`} sizes="(max-width: 479px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
           ))}
         </section>
       )}

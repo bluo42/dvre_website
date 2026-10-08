@@ -55,7 +55,9 @@ to invest.
 
 Add an entry to the `projects` list in `lib/data.ts` with its fund slug
 (`fund-i`, `pasadena-fund`, `altadena-fund`, `retail`). It appears on the fund page
-and gets its own page at `/projects/<slug>`.
+and opens its own page at `/projects/<slug>` once it has more than one photo. With a
+single photo, its card shows the photo only. Add `renderings: true` when the images are
+renderings; the card and page are then labelled as such.
 
 ## Run locally (optional)
 

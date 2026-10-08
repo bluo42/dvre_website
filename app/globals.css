@@ -155,6 +155,8 @@ h3 { font-size: var(--fs-h3); }
 .status-badge.is-active::before { background: #f5b301; box-shadow: 0 0 0 3px rgba(245,179,1,.28); }
 .status-badge.is-soon { background: rgba(0,0,0,.72); color: #ddd; border: 1px solid rgba(255,255,255,.3); }
 .status-badge.is-soon::before { background: #9a9a9a; }
+.render-tag { position: absolute; right: 14px; bottom: 14px; z-index: 3; padding: 5px 9px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: rgba(0,0,0,.6); }
+.render-note { font-size: 13px; color: var(--grey-2); margin: 0 auto 14px; }
 .photo-card-tx b { display: block; font-family: var(--display); font-size: clamp(20px, 1.2rem + .6vw, 28px); }
 .photo-card-tx i { display: block; font-style: normal; font-size: var(--fs-small); letter-spacing: .12em; text-transform: uppercase; color: #ddd; margin-top: 8px; }
 

@@ -43,6 +43,7 @@ export default function FundPage({ params }: { params: { slug: string } }) {
                 <>
                   <Cover src={p.photos[0]} sizes="(max-width: 767px) 100vw, 50vw" />
                   <StatusBadge status={p.status} />
+                  {p.renderings && <span className="render-tag">Rendering</span>}
                   <span className="photo-card-tx"><b>{p.name}</b>{p.address && <i>{p.address}</i>}</span>
                 </>
               );
