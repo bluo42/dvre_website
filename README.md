@@ -4,31 +4,20 @@ The dvrepartners.com site as a Next.js project, ready to host on Vercel.
 It recreates the pages built on Squarespace: homepage, About, Team, the fund
 pages, 11 project pages, and News with individual post pages.
 
-## Deploy to Vercel (about 10 minutes)
+## Hosting
 
-1. **Put the code on GitHub.** Create a new private repository at github.com/new,
-   then upload this folder (drag the files into the repo page, or use `git push`).
-2. **Import to Vercel.** At vercel.com/new, choose the repository and click Deploy.
-   No settings need changing. You'll get a preview link like `dvre-partners.vercel.app`.
-3. **Check the preview**, then connect your domain: Vercel project → Settings →
-   Domains → add `dvrepartners.com` and `www.dvrepartners.com`. Vercel shows the DNS
-   records to set at your domain registrar (or in Squarespace Domains, if the domain
-   was bought there — you can transfer it out later).
-4. **Before cancelling Squarespace**, run the image copy step below so no photos
-   are still served from Squarespace.
-
-Every change you push to GitHub redeploys automatically.
+The site is deployed on Vercel (project `dvre-website`, team `dvre-development-team`)
+from the `main` branch of this repository. Every push to `main` redeploys automatically.
+`dvrepartners.com` and `www.dvrepartners.com` are added to the Vercel project; the
+apex redirects to `www`. DNS is managed in Squarespace Domains.
 
 ## Before you cancel Squarespace
 
-- **Copy the photos into the project** (they currently load from Squarespace's image
-  server). On your computer, in this folder:
-  ```
-  npm install
-  npm run fetch-images
-  ```
-  This downloads every photo into `public/images/` and updates `lib/data.ts`.
-  Commit and push the result.
+- **Photos are already in the project** (`public/images/`), so nothing is served
+  from Squarespace's image server any more. Add new photos to `public/images/` and
+  reference them in `lib/data.ts` as `img('/images/<file>.jpg')`.
+- **Point the domain at Vercel** (see Hosting above) before cancelling the Squarespace
+  site, and keep the Google Workspace email (MX/TXT) records as they are.
 - **Add the hero video.** Save your drone clip as `public/video/hero.mp4`
   (see `public/video/README.txt`). Until then the homepage shows a still photo.
 - **Old links keep working.** `next.config.mjs` redirects the old Squarespace URLs

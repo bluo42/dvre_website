@@ -20,7 +20,7 @@ export const site = {
     subtitle: 'Value-add and opportunistic real estate investment across the San Gabriel Valley.',
     // Drop an MP4 at /public/video/hero.mp4 (see README). The poster shows until it loads.
     video: '/video/hero.mp4',
-    poster: img('0613468c-30bf-4187-9cf4-ef4bf0e23898/RemoteMediaFile_6553624_0_2022_03_12_10_14_42.JPG'),
+    poster: img('/images/0613468c-RemoteMediaFile_6553624_0_2022_03_12_10_14_42.jpg'),
   },
   about:
     'DVRE Partners is a full-cycle real estate investment and development firm pursuing value-add opportunities across residential and retail real estate in the San Gabriel Valley.',
@@ -39,10 +39,10 @@ export const stats = [
 
 // Fallback aerials used when a project or post has no photo of its own.
 export const photos = {
-  fundI: img('185b5c0f-a4bb-49d5-9996-6ea81aebfe30/dji_fly_20250502_133554_202_1746218268245_photo_optimized.jpg'),
-  pasadena: img('a77fc369-7765-41c0-817f-703745cefe56/dji_fly_20241214_155056_998_1734220340252_photo_optimized.JPG'),
-  altadena: img('5579d4c2-6c95-40c2-86e3-948bdba3578e/90461F3D-06E0-40D4-B9E6-89211F7CA142.jpg'),
-  retail: img('01fceaa1-95e1-435d-8f23-45b7979b7275/dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
+  fundI: img('/images/185b5c0f-dji_fly_20250502_133554_202_1746218268245_photo_optimized.jpg'),
+  pasadena: img('/images/a77fc369-dji_fly_20241214_155056_998_1734220340252_photo_optimized.jpg'),
+  altadena: img('/images/5579d4c2-90461F3D-06E0-40D4-B9E6-89211F7CA142.jpg'),
+  retail: img('/images/01fceaa1-dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
 };
 
 export type Fund = {
@@ -159,40 +159,40 @@ export const projects: Project[] = [
     slug: 'virginia', name: 'Virginia', fund: 'fund-i', status: 'Completed',
     summary: 'A completed value-add project from DVRE Fund I.',
     photos: [
-      img('59b8bb89-c659-4bd4-99ac-954d310e56bc/dji_fly_20250502_133554_202_1746218268245_photo_optimized.JPG'),
-      img('b83d6a97-5786-4855-acc2-6aa8611f87b4/021A5986_edited.jpg'),
-      img('0e6570c1-fe4d-4482-88dd-fc3aa21eb7ff/021A5830.jpg'),
-      img('cdc50c10-dd3e-4af0-a069-55424fb7b8fa/021A5812.jpg'),
+      img('/images/59b8bb89-dji_fly_20250502_133554_202_1746218268245_photo_optimized.jpg'),
+      img('/images/b83d6a97-021A5986_edited.jpg'),
+      img('/images/0e6570c1-021A5830.jpg'),
+      img('/images/cdc50c10-021A5812.jpg'),
     ],
   },
   {
     slug: 'howard-3', name: 'Howard 3', fund: 'fund-i', status: 'Completed', address: '266 W Howard St',
     summary: 'A completed value-add project from DVRE Fund I.',
     photos: [
-      img('e1f4df71-f51e-45a8-aeeb-d2c41b2c8af3/dji_fly_20241214_155056_998_1734220340252_photo_optimized.JPG'),
-      img('d07dc4e8-62a6-450f-9101-d32732f669ae/266+W+Howard+St+Unit+2%263-33.jpg'),
-      img('98d20ce8-eea1-4a8a-8e92-0950c3202727/266+W+Howard+St+Unit+2%263-30.jpg'),
-      img('2b396041-d4f1-4225-b297-d5a5f7da2b8a/266+W+Howard+St+Unit+2%263-35.jpg'),
+      img('/images/e1f4df71-dji_fly_20241214_155056_998_1734220340252_photo_optimized.jpg'),
+      img('/images/d07dc4e8-266-W-Howard-St-Unit-2-3-33.jpg'),
+      img('/images/98d20ce8-266-W-Howard-St-Unit-2-3-30.jpg'),
+      img('/images/2b396041-266-W-Howard-St-Unit-2-3-35.jpg'),
     ],
   },
   {
     slug: 'oakland-5', name: 'Oakland 5', fund: 'fund-i', status: 'Completed', address: '545 N Oakland Ave',
     summary: 'A completed value-add project from DVRE Fund I.',
     photos: [
-      img('26908d63-0be4-4ed8-80d7-0b576827bed5/dji_fly_20230122_104118_185_1674412884693_photo_optimized.JPG'),
-      img('7c62303a-88c7-4aab-b9ea-1550a36f8d9f/545+N+Oakland+Ave+001-mls.jpg'),
-      img('da669b18-edd7-4fe6-9688-8d9e7feb2dec/543+N+oakland+-+overhead+1.jpg'),
-      img('6dae95a0-8023-4a68-b8dd-237f4415020d/545+N+Oakland+Ave+017-mls.jpg'),
+      img('/images/26908d63-dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
+      img('/images/7c62303a-545-N-Oakland-Ave-001-mls.jpg'),
+      img('/images/da669b18-543-N-oakland---overhead-1.jpg'),
+      img('/images/6dae95a0-545-N-Oakland-Ave-017-mls.jpg'),
     ],
   },
   {
     slug: 'almansor-11', name: 'Almansor 11', fund: 'fund-i', status: 'Completed',
     summary: 'A completed value-add project from DVRE Fund I.',
     photos: [
-      img('59dc8c6c-312f-43e9-8465-414967878eef/90461F3D-06E0-40D4-B9E6-89211F7CA142.jpeg'),
-      img('1f74f752-dc51-4959-b034-089a126eeeb5/r1-1.jpg'),
-      img('4325f350-c59e-4ab3-835d-db38814cbfba/r3-1.jpg'),
-      img('76854e45-b48b-4601-af02-6ab8b1096e7e/IMG_5265.jpeg'),
+      img('/images/59dc8c6c-90461F3D-06E0-40D4-B9E6-89211F7CA142.jpg'),
+      img('/images/1f74f752-r1-1.jpg'),
+      img('/images/4325f350-r3-1.jpg'),
+      img('/images/76854e45-IMG_5265.jpg'),
     ],
   },
   // ── Pasadena Fund ──
