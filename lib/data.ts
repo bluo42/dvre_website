@@ -40,8 +40,8 @@ export const stats = [
 // Fallback aerials used when a project or post has no photo of its own.
 export const photos = {
   fundI: img('/images/185b5c0f-dji_fly_20250502_133554_202_1746218268245_photo_optimized.jpg'),
-  pasadena: img('/images/a77fc369-dji_fly_20241214_155056_998_1734220340252_photo_optimized.jpg'),
-  altadena: img('/images/5579d4c2-90461F3D-06E0-40D4-B9E6-89211F7CA142.jpg'),
+  pasadena: img('/images/865-madison-aerial-wide.jpg'),
+  altadena: img('/images/altadena-aerial.jpg'),
   retail: img('/images/01fceaa1-dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
 };
 
@@ -200,13 +200,18 @@ export const projects: Project[] = [
     slug: 'madison-8', name: 'Madison 8', fund: 'pasadena-fund', status: 'Completed', address: '865 N Madison Ave',
     units: '8',
     summary: 'An existing four-unit Pasadena property expanded with four new homes and renovated units. Construction is complete and the homes are now leasing.',
-    photos: [photos.pasadena],
+    photos: [
+      img('/images/865-madison-aerial.jpg'),
+      img('/images/865-madison-courtyard.jpg'),
+      img('/images/865-madison-kitchen.jpg'),
+      img('/images/865-madison-bath.jpg'),
+    ],
   },
   {
     slug: 'oakland-7', name: 'Oakland 7', fund: 'pasadena-fund', status: 'In progress', address: '582 N Oakland Ave',
     units: '7', sqft: '±5,557',
     summary: 'A three-unit Pasadena property on a 0.29-acre lot, adding three detached ADUs and one garage-conversion ADU while existing residents stay in place. Now under construction, with completion targeted for late 2026.',
-    photos: [photos.pasadena],
+    photos: [img('/images/582-oakland-aerial.jpg')],
   },
   {
     slug: 'madison-7', name: 'Madison 7', fund: 'pasadena-fund', status: 'In progress', address: '536 N Madison Ave',

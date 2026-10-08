@@ -18,7 +18,7 @@ const nextConfig = {
       { source: '/howard3-1', destination: '/projects/howard-3', permanent: true },
       { source: '/oakland5', destination: '/projects/oakland-5', permanent: true },
       { source: '/almansor11', destination: '/projects/almansor-11', permanent: true },
-      { source: '/madison-8', destination: '/funds/pasadena-fund', permanent: true },
+      { source: '/madison-8', destination: '/projects/madison-8', permanent: true },
       { source: '/madison-7', destination: '/funds/pasadena-fund', permanent: true },
       { source: '/oakland-7', destination: '/funds/pasadena-fund', permanent: true },
       { source: '/marathon', destination: '/funds/altadena-fund', permanent: true },
