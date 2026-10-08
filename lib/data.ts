@@ -158,8 +158,8 @@ export const projects: Project[] = [
   // ── Fund I ──
   {
     slug: 'virginia', name: 'Virginia', fund: 'fund-i', status: 'Completed',
-    address: '290 Virginia Ave, Pasadena', units: '2',
-    summary: 'A completed value-add project from DVRE Fund I.',
+    address: '290 Virginia Ave, Pasadena', units: '1',
+    summary: 'A Pasadena home remodeled in a modern style with a 500 sq ft bonus loft.',
     photos: [
       img('/images/59b8bb89-dji_fly_20250502_133554_202_1746218268245_photo_optimized.jpg'),
       img('/images/b83d6a97-021A5986_edited.jpg'),
@@ -170,7 +170,7 @@ export const projects: Project[] = [
   {
     slug: 'howard-3', name: 'Howard 3', fund: 'fund-i', status: 'Completed',
     address: '266–270 W Howard St, Pasadena', units: '3',
-    summary: 'A completed value-add project from DVRE Fund I.',
+    summary: 'Two detached units added to a single family residence.',
     photos: [
       img('/images/e1f4df71-dji_fly_20241214_155056_998_1734220340252_photo_optimized.jpg'),
       img('/images/d07dc4e8-266-W-Howard-St-Unit-2-3-33.jpg'),
@@ -181,7 +181,7 @@ export const projects: Project[] = [
   {
     slug: 'oakland-5', name: 'Oakland 5', fund: 'fund-i', status: 'Completed',
     address: '545 N Oakland Ave, Pasadena', units: '5',
-    summary: 'A completed value-add project from DVRE Fund I.',
+    summary: 'Two additional units added to an existing triplex.',
     photos: [
       img('/images/26908d63-dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
       img('/images/7c62303a-545-N-Oakland-Ave-001-mls.jpg'),
@@ -192,7 +192,7 @@ export const projects: Project[] = [
   {
     slug: 'almansor-11', name: 'Almansor 11', fund: 'fund-i', status: 'Completed',
     address: '98–100 N Almansor St, Alhambra', units: '2 (11 bedrooms)',
-    summary: 'A completed value-add project from DVRE Fund I.',
+    summary: 'A detached ADU added to a remodeled single family residence, for 11 bedrooms in total.',
     photos: [
       img('/images/59dc8c6c-90461F3D-06E0-40D4-B9E6-89211F7CA142.jpg'),
       img('/images/1f74f752-r1-1.jpg'),
@@ -204,7 +204,7 @@ export const projects: Project[] = [
   {
     slug: 'madison-8', name: 'Madison 8', fund: 'pasadena-fund', status: 'Completed',
     address: '865 N Madison Ave, Pasadena', units: '8',
-    summary: 'An existing four-unit Pasadena property expanded with four new homes and renovated units. Construction is complete and the homes are now leasing.',
+    summary: 'Four ADUs added to an existing fourplex.',
     photos: [
       img('/images/865-madison-aerial.jpg'),
       img('/images/865-madison-courtyard.jpg'),
@@ -215,20 +215,20 @@ export const projects: Project[] = [
   {
     slug: 'oakland-7', name: 'Oakland 7', fund: 'pasadena-fund', status: 'In progress',
     address: '582 N Oakland Ave, Pasadena', units: '7',
-    summary: 'A three-unit Pasadena property on a 0.29-acre lot, adding three detached ADUs and one garage-conversion ADU while existing residents stay in place. Now under construction, with completion targeted for late 2026.',
+    summary: 'Four ADUs being added to an existing three-unit property.',
     photos: [img('/images/582-oakland-aerial.jpg')],
   },
   {
     slug: 'madison-7', name: 'Madison 7', fund: 'pasadena-fund', status: 'In progress',
     address: '536 N Madison Ave, Pasadena', units: '7',
-    summary: 'A 1923 bungalow triplex near Old Town Pasadena, with four new three-bedroom homes planned at the rear of the lot. Currently in permitting.',
+    summary: 'Four new homes planned behind an existing 1923 triplex.',
     photos: [img('/images/536-madison-aerial.jpg')],
   },
   // ── Altadena Fund ──
   {
     slug: 'glenrose', name: 'Glenrose', fund: 'altadena-fund', status: 'In progress',
     address: '2100 Glenrose Ave, Altadena', units: '4',
-    summary: 'Ground-up build-to-rent housing on a fire-affected Altadena lot.',
+    summary: 'Four build-to-rent homes planned on a fire-affected Altadena lot.',
     renderings: true,
     photos: [
       img('/images/glenrose-rendering-aerial.jpg'),
@@ -239,8 +239,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'marathon', name: 'Marathon', fund: 'altadena-fund', status: 'In progress',
-    address: '50 Marathon Rd, Altadena', units: '8 (2 × 4)',
-    summary: 'Two adjacent Altadena lots being rebuilt as eight build-to-rent homes under SB 9. Currently in plan check.',
+    address: '50 Marathon Rd, Altadena', units: '4',
+    summary: 'Four build-to-rent homes planned under SB 9 on a fire-affected Altadena lot.',
     renderings: true,
     photos: [
       img('/images/marathon-rendering-street.jpg'),
@@ -250,7 +250,7 @@ export const projects: Project[] = [
   {
     slug: 'sinaloa', name: 'Sinaloa', fund: 'altadena-fund', status: 'In progress',
     address: '2261 Sinaloa Ave, Altadena', units: '4',
-    summary: 'Four new build-to-rent homes on a fire-affected Altadena lot.',
+    summary: 'Four build-to-rent homes planned on a fire-affected Altadena lot.',
     renderings: true,
     photos: [
       img('/images/sinaloa-rendering-street.jpg'),
@@ -262,7 +262,7 @@ export const projects: Project[] = [
   {
     slug: 'fair-oaks', name: 'Fair Oaks', fund: 'altadena-fund', status: 'In progress',
     address: '3268 Fair Oaks Ave, Altadena',
-    summary: 'Ground-up build-to-rent housing on a fire-affected Altadena lot.',
+    summary: 'New build-to-rent homes planned on a fire-affected Altadena lot.',
     photos: [img('/images/fair-oaks-aerial.jpg')],
   },
 ];

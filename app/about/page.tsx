@@ -8,7 +8,7 @@ export default function About() {
   return (
     <>
       <section className="banner">
-        <Cover src={photos.about} sizes="100vw" priority />
+        <Cover src={photos.about} sizes="100vw" priority position="50% 25%" />
         <div className="wrap banner-copy">
           <p className="eyebrow">About us</p>
           <h1>Full-cycle real estate investment.</h1>
