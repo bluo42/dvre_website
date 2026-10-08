@@ -43,7 +43,7 @@ export const photos = {
   pasadena: img('/images/pasadena-fund-536-madison.jpg'),
   altadena: img('/images/altadena-aerial.jpg'),
   about: img('/images/b83d6a97-021A5986_edited.jpg'),
-  retail: img('/images/01fceaa1-dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
+  retail: img('/images/world-plaza-aerial.jpg'),
 };
 
 export type Fund = {
