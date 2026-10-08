@@ -48,6 +48,7 @@ export default function Home() {
             <Link key={f.slug} href={`/funds/${f.slug}`} className="photo-card fund-card">
               <Cover src={f.photo} sizes="(max-width: 1023px) 80vw, 20vw" />
               <StatusBadge status={fundStatus(f)} />
+              {f.photoRendering && <span className="render-tag">Rendering</span>}
               <span className="photo-card-tx"><b>{f.cardLabel}</b><i>{f.cardStatus}</i></span>
             </Link>
           ))}

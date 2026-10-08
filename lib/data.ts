@@ -40,7 +40,7 @@ export const stats = [
 // Fallback aerials used when a project or post has no photo of its own.
 export const photos = {
   fundI: img('/images/185b5c0f-dji_fly_20250502_133554_202_1746218268245_photo_optimized.jpg'),
-  pasadena: img('/images/865-madison-aerial-wide.jpg'),
+  pasadena: img('/images/pasadena-fund-536-madison.jpg'),
   altadena: img('/images/altadena-aerial.jpg'),
   about: img('/images/b83d6a97-021A5986_edited.jpg'),
   retail: img('/images/01fceaa1-dji_fly_20230122_104118_185_1674412884693_photo_optimized.jpg'),
@@ -60,6 +60,7 @@ export type Fund = {
   photo: string;
   projectsHeading: string;
   comingSoon?: boolean;
+  photoRendering?: boolean; // the fund photo is a rendering
 };
 
 export const funds: Fund[] = [
@@ -122,7 +123,8 @@ export const funds: Fund[] = [
       ['Status', 'Design & plan check'],
     ],
     dateline: 'ALTADENA, CA',
-    photo: photos.altadena,
+    photo: img('/images/glenrose-rendering-front.jpg'),
+    photoRendering: true,
     projectsHeading: 'In progress',
   },
   {
@@ -272,7 +274,7 @@ export const team = [
     name: 'Brian Chan',
     role: 'Partner · Development',
     photo: '/team/brian-chan.jpg',
-    bio: "Brian Chan is a Partner at DVRE Partners, responsible for development, design and construction across the firm's portfolio. Brian also oversees Deluxury Homes, the firm's affiliated construction company. Previously, Brian managed more than $100 million of multifamily development at West Builders. Brian holds a Bachelor of Architecture from California Polytechnic State University, San Luis Obispo.",
+    bio: "Brian Chan is a Partner at DVRE Partners, responsible for development, design and construction across the firm's portfolio. Brian also oversees Deluxury Homes, the firm's affiliated construction company. Previously, Brian managed more than $100 million of multifamily construction at West Builders. Brian holds a Bachelor of Architecture from California Polytechnic State University, San Luis Obispo.",
   },
   {
     name: 'Brandon Luo',

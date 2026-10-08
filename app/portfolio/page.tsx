@@ -18,6 +18,7 @@ export default function Portfolio() {
           <Link key={f.slug} href={`/funds/${f.slug}`} className="photo-card portfolio-card">
             <Cover src={f.photo} sizes="(max-width: 767px) 100vw, 50vw" />
             <StatusBadge status={fundStatus(f)} />
+            {f.photoRendering && <span className="render-tag">Rendering</span>}
             <span className="photo-card-tx"><b>{f.name}</b><i>{f.cardStatus}</i></span>
           </Link>
         ))}
