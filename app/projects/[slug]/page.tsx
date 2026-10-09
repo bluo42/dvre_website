@@ -19,7 +19,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   const facts: [string, string][] = [
     ['Fund', fund.name],
     ['Status', p.status],
-    ...(p.address ? [['Address', p.address] as [string, string]] : []),
     ...(p.units ? [['Units', p.units] as [string, string]] : []),
   ];
 
